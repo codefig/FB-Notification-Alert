@@ -44,13 +44,13 @@ while True:
      
      browser.open("https://m.facebook.com/notifications")
      soup=BeautifulSoup(browser.response().read())
-     print soup.title.string
+     print(soup.title.string)
      pynotify.init('Notification')
      Is=soup.findAll('div',attrs={ "class" : "acy apm"})
      for s in Is:
         msg=s.get_text()
-        print msg
-        print ""
+        print(msg)
+        print("")
         n=pynotify.Notification('Notification',msg)
         n.show()
 
@@ -59,7 +59,7 @@ while True:
     pynotify.init('Notification')
     n=pynotify.Notification('Notification',"Connection/Authentication Failure")
     n.show()
-    print "Connection/Authentication Failure"
+    print("Connection/Authentication Failure")
     time.sleep(60)
   
       
